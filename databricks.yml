@@ -1,0 +1,19 @@
+# This is a Declarative Automation Bundle definition for email-forensics.
+# The Databricks extension requires databricks.yml configuration file.
+# See https://docs.databricks.com/dev-tools/bundles/index.html for documentation.
+
+bundle:
+  name: email-forensics
+
+targets:
+  dev:
+    mode: development
+    default: true
+    workspace:
+      host: <YOUR_WORKSPACE_URL>
+
+  ## Optionally, there could be 'staging' or 'prod' targets here.
+  #
+  # prod:
+  #   workspace:
+  #     host: <YOUR_WORKSPACE_URL>

@@ -1,0 +1,53 @@
+{
+  "catalog": "workspace",
+  "schema": "email_forensics",
+  "volume": "raw",
+  "source": {
+    "base_url": "https://lists.apache.org/api",
+    "user_agent": "email-forensics-project/0.1 (personal learning project)",
+    "pause_seconds": 1.5
+  },
+  "lists": [
+    {"prefix": "dev", "domain": "iceberg.apache.org"},
+    {"prefix": "dev", "domain": "arrow.apache.org"},
+    {"prefix": "dev", "domain": "kafka.apache.org"},
+    {"prefix": "dev", "domain": "airflow.apache.org"},
+    {"prefix": "dev", "domain": "flink.apache.org"}
+  ],
+  "window": {
+    "start_month": "2025-10",
+    "end_month": "2026-09"
+  },
+  "dedup": {
+    "min_body_chars": 50,
+    "normalisation_version": "norm_v1"
+  },
+  "bronze": {
+    "exceptions": [
+      {
+        "file": "dev@kafka.apache.org_2026-09.mbox",
+        "accepted_shortfall": 2,
+        "reason": "Bronze matches the From-line count; source count is 2 higher; cause unknown (short download or non-mail items counted at source)"
+      }
+    ]
+  },
+  "gold": {
+    "scope_lists": ["dev@iceberg.apache.org", "dev@arrow.apache.org", "dev@kafka.apache.org", "dev@airflow.apache.org", "dev@flink.apache.org"],
+    "scope_months": ["2026-04", "2026-05", "2026-06", "2026-07", "2026-08", "2026-09"],
+    "keywords": {
+      "breaking": ["breaking", "incompatible", "backward-incompatible"],
+      "deprecation": ["deprecated", "deprecation", "deprecating"],
+      "regression": ["regression", "regressions", "regressed"],
+      "revert": ["revert", "reverted", "rollback"],
+      "upgrade": ["upgrade", "upgrading", "migration"],
+      "security": ["CVE", "vulnerability", "vulnerabilities"]
+    },
+    "strong_hit_min_keywords": 2,
+    "review_rates_docs_per_hour": [50, 100],
+    "cost_per_review_hour": null,
+    "wilson_z": 1.96,
+    "capture_targets": [0.5, 0.8],
+    "salt_secret_scope": "email_forensics",
+    "salt_secret_key": "pseudonym_salt"
+  }
+}
