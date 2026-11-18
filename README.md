@@ -14,8 +14,8 @@ When I started thinking like a data engineer, I became a better data scientist.
 ## Chapters
 
 0. **This page:** the idea, the bottlenecks and the evidence trail.
-1. **[Setup](course/SETUP.md):** build and run both Jobs on Databricks Free Edition.
-2. **Deep dives:** TBD.
+1. **[Setup](course/01_SETUP.md):** build and run both Jobs on Databricks Free Edition.
+2. **Deep dives:** [Claim it! DIY](course/02_CLAIM_IT_DIY.md): rebuild the core with plain Python and SQLite, no platform. More to come.
 3. **Worksheets:** TBD.
 
 ## What are the real bottlenecks?
@@ -65,8 +65,8 @@ flowchart LR
 
 ## Run it yourself, on any platform
 
-- **Setup Guide** for Databricks Free Edition: **[course/SETUP.md](course/SETUP.md)**. Start here.
-- **Deep Dives** Why these things matter? How do we arrive to this? Ownership? How to make these principles work in any platform using plain Python and SQL and much more!
-- **Worksheets** Frameworks that will help you apply these principles your projects!
+- **Setup Guide** for Databricks Free Edition: **[course/01_SETUP.md](course/01_SETUP.md)**. Start here.
+- **Deep Dives**, starting with **[course/02_CLAIM_IT_DIY.md](course/02_CLAIM_IT_DIY.md)**. Why these things matter? How do we arrive to this? Ownership? How to make these principles work in any platform using plain Python and SQL and much more!
+- **Worksheets** Frameworks that will help you apply these principles to your projects!
 
 The setup guide is the high-level tour: it shows how much a platform does for you. The rest shows which parts were the platform and which parts were the habits.

@@ -1,6 +1,6 @@
 # 01 End-to-end setup
 
-**Status:** Works end-to-end as of November 11th 2026. Typical issues are addressed in the troubleshooting section below. For issues not covered, open a GitHub issue. 
+**Status:** Works end-to-end as of November 11th 2026. Typical issues are addressed in the troubleshooting section below. For issues not covered, open a GitHub issue.
 
 ## Before you start: be the bridge
 
@@ -111,6 +111,8 @@ Open the notebook and run all cells. It validates the config, prints a SHA-256 h
 > Run the notebook a second time with no changes. Nothing breaks and nothing is duplicated. Every step in this project is safe to re-run (`IF NOT EXISTS`, files that exist are skipped).
 
 ## Step 3. Create the salt (one-off)
+
+> **Observe · Be the bridge.** Compliance requirements are non-negotiable. Design with them in mind.
 
 Gold replaces each claimed sender with a pseudonym: an HMAC-SHA256 of the address with a secret key (the salt). The salt never goes in the repo. You create it once, in a new notebook of its own:
 
@@ -258,14 +260,14 @@ See [architecture.md](../docs/workshop/architecture.md) for the full diagram.
 ## Troubleshooting
 
 
-| You see                                                      | Likely cause                                            |
-| ------------------------------------------------------------ | ------------------------------------------------------- |
-| `config: '...'` error in setup                               | A setting failed validation. The message names it       |
-| Bronze: "No snapshot_id ... Check the task is named pull"    | The first task of Job 1 has a different name            |
-| Silver: "dry_run is true inside a Job"                       | Set the `dry_run` task parameter to `false`             |
-| Silver: "snapshot_id is empty inside a Job"                  | Run with **Run now with different settings** and paste the `snapshot_id` (Step 6) |
-| Gold: "Could not read the salt secret"                       | Step 3 not done, or names differ from the config        |
-| `pull` fails on the config hash when pinning an old snapshot | Intended: a snapshot is tied to the config that made it |
+| You see                                                      | Likely cause                                                                     |
+| ------------------------------------------------------------ | -------------------------------------------------------------------------------- |
+| `config: '...'` error in setup                               | A setting failed validation. The message names it                                |
+| Bronze: "No snapshot_id ... Check the task is named pull"    | The first task of Job 1 has a different name                                     |
+| Silver: "dry_run is true inside a Job"                       | Set the`dry_run` task parameter to `false`                                       |
+| Silver: "snapshot_id is empty inside a Job"                  | Run with**Run now with different settings** and paste the `snapshot_id` (Step 6) |
+| Gold: "Could not read the salt secret"                       | Step 3 not done, or names differ from the config                                 |
+| `pull` fails on the config hash when pinning an old snapshot | Intended: a snapshot is tied to the config that made it                          |
 
 ## Next steps
 
