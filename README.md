@@ -16,7 +16,7 @@ When I started thinking like a data engineer, I became a better data scientist.
 0. **This page:** the idea, the bottlenecks and the evidence trail.
 1. **[Setup](course/01_SETUP.md):** build and run both Jobs on Databricks Free Edition.
 2. **Deep dives:** [Claim it! DIY](course/02_CLAIM_IT_DIY.md): rebuild the core with plain Python and SQLite, no platform. More to come.
-3. **Worksheets:** TBD.
+3. **Worksheet (next):** take the pipeline apart, then orchestrate it twice: with bash and `cron`, and with Lakeflow Jobs.
 
 ## What are the real bottlenecks?
 

@@ -264,8 +264,8 @@ See [architecture.md](../docs/workshop/architecture.md) for the full diagram.
 | ------------------------------------------------------------ | -------------------------------------------------------------------------------- |
 | `config: '...'` error in setup                               | A setting failed validation. The message names it                                |
 | Bronze: "No snapshot_id ... Check the task is named pull"    | The first task of Job 1 has a different name                                     |
-| Silver: "dry_run is true inside a Job"                       | Set the`dry_run` task parameter to `false`                                       |
-| Silver: "snapshot_id is empty inside a Job"                  | Run with**Run now with different settings** and paste the `snapshot_id` (Step 6) |
+| Silver: "dry_run is true inside a Job"                       | Set the `dry_run` task parameter to `false`                                       |
+| Silver: "snapshot_id is empty inside a Job"                  | Run with **Run now with different settings** and paste the `snapshot_id` (Step 6) |
 | Gold: "Could not read the salt secret"                       | Step 3 not done, or names differ from the config                                 |
 | `pull` fails on the config hash when pinning an old snapshot | Intended: a snapshot is tied to the config that made it                          |
 
